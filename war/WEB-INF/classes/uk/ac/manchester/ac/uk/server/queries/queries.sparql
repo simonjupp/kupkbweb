@@ -1,0 +1,272 @@
+
+^[generate_results_table]
+PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>
+PREFIX kupkb:<http://www.kupkb.org/data/kupkb/>
+PREFIX kupo:<http://www.kupkb.org/data/kupo/>
+
+SELECT DISTINCT ?geneid ?genesymbol ?experiment ?experimentDisplayName ?experimentTypeLabel  ?annotation ?species ?analyteBioMaterial ?analyteanatomy ?analyteDiseaseURI ?analytedisease ?expressionURI ?expLabel ?expDesc ?pmid ?seeAlsoLink
+WHERE {
+
+{
+  {?geneid rdf:type <http://bio2rdf.org/ns/geneid:Gene>}
+  UNION
+  {?geneid rdf:type kupkb:KUPKB_1000056}
+  UNION
+  {?geneid rdf:type <http://bio2rdf.org/ns/hmdb:Compound>}
+} .
+{
+  {?geneid <http://bio2rdf.org/ns/bio2rdf:symbol> ?genesymbol}
+  UNION
+  {?geneid rdfs:label ?genesymbol}
+}
+
+?geneid <http://bio2rdf.org/ns/bio2rdf:xTaxonomy> ?taxon .
+?taxon rdfs:label ?species .
+{
+  {?listmember kupkb:hasDatabaseRef ?geneid}
+  UNION
+  { ?geneid <http://bio2rdf.org/ns/uniprot:xProtein> ?uniprot .
+    ?listmember kupkb:hasDatabaseRef ?uniprot
+  }
+}
+
+?listmember kupkb:hasExpression ?expressionURI .
+?expressionURI rdfs:label ?expLabel .
+?compoundList kupkb:hasMember ?listmember .
+?compoundList rdf:type ?experimentType .
+?experimentType rdfs:label ?experimentTypeLabel .
+filter (?experimentType = kupkb:KUPKB_1000029 || ?experimentType = kupkb:KUPKB_1000027 ||
+        ?experimentType = kupkb:KUPKB_1000073 || ?experimentType = kupkb:KUPKB_1000030 || ?experimentType = kupkb:KUPKB_1000028 || ?experimentType = kupkb:KUPKB_1000077) .
+?analysis kupkb:produces ?compoundList .
+?analysis kupkb:annotatedWith ?annotation .
+?analysis kupkb:analysisOf  ?experiment  .
+OPTIONAL {?experiment rdfs:comment  ?expDesc}  .
+?experiment rdfs:label  ?experimentDisplayName  .
+
+OPTIONAL { ?experiment <http://www.kupkb.org/data/kupkb/experiment/pmid> ?pmid . }
+OPTIONAL { ?experiment rdfs:seeAlso ?seeAlsoLink . }
+
+?annotation kupkb:hasAnnotationRole kupo:KUPO_0300008 .
+?annotation kupkb:bioMaterial ?analyteBioMaterial .
+?analyteBioMaterial rdfs:label ?analyteanatomy .
+
+OPTIONAL { ?annotation kupkb:hasDisease ?analyteDiseaseURI .
+           ?analyteDiseaseURI rdfs:label ?analytedisease }
+
+}
+
+
+^[old_generate_results_table]
+PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>
+PREFIX kupkb:<http://www.kupkb.org/data/kupkb/>
+
+SELECT DISTINCT ?geneid ?genesymbol ?experiment ?experimentDisplayName ?experimentTypeLabel  ?annotation ?species ?analyteBioMaterial ?analyteanatomy ?analyteDiseaseURI ?analytedisease ?expLabel ?expDesc ?pmid ?seeAlsoLink
+            WHERE {
+            ?geneid rdf:type <http://bio2rdf.org/ns/geneid:Gene> .
+            ?geneid <http://bio2rdf.org/ns/bio2rdf:symbol> ?genesymbol .
+            ?geneid <http://bio2rdf.org/ns/bio2rdf:xTaxonomy> ?taxon .
+            ?taxon rdfs:label ?species .
+
+            {
+               {?listmember <http://www.kupkb.org/data/kupkb/hasDatabaseRef> ?geneid}
+                  UNION
+               { ?geneid <http://bio2rdf.org/ns/uniprot:xProtein> ?uniprot .
+                   ?listmember <http://www.kupkb.org/data/kupkb/hasDatabaseRef> ?uniprot}
+            }
+
+            ?listmember <http://www.kupkb.org/data/kupkb/hasExpression> ?expression .
+            ?expression rdfs:label ?expLabel .
+
+            ?compoundList <http://www.kupkb.org/data/kupkb/hasMember> ?listmember .
+            ?compoundList rdf:type ?experimentType .
+            ?experimentType rdfs:label ?experimentTypeLabel .
+            filter (?experimentType = kupkb:KUPKB_1000029 || ?experimentType = kupkb:KUPKB_1000027 ||
+            ?experimentType = kupkb:KUPKB_1000073 || ?experimentType = kupkb:KUPKB_1000030 || ?experimentType = kupkb:KUPKB_1000028 || ?experimentType = kupkb:KUPKB_1000077) .
+
+            ?analysis <http://www.kupkb.org/data/kupkb/produces> ?compoundList .
+            ?analysis  <http://www.kupkb.org/data/kupkb/annotatedWith> ?annotation .
+            ?analysis <http://www.kupkb.org/data/kupkb/analysisOf>  ?experiment  .
+            ?experiment rdfs:comment  ?expDesc  .
+            ?experiment rdfs:label  ?experimentDisplayName  .
+            OPTIONAL { ?experiment <http://www.kupkb.org/data/kupkb/experiment/pmid> ?pmid . }
+            OPTIONAL { ?experiment rdfs:seeAlso ?seeAlsoLink . }
+
+            ?annotation <http://www.kupkb.org/data/kupkb/hasAnnotationRole> <http://www.kupkb.org/data/kupo/KUPO_0300008> .
+            ?annotation <http://www.kupkb.org/data/kupkb/bioMaterial> ?analyteBioMaterial .
+            ?analyteBioMaterial rdfs:label ?analyteanatomy .
+
+             OPTIONAL { ?annotation <http://www.kupkb.org/data/kupkb/hasDisease> ?analyteDiseaseURI .
+                                   ?analyteDiseaseURI rdfs:label ?analytedisease }
+            }
+
+
+^[get_go_annotations]
+PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>
+PREFIX kupkb:<http://www.kupkb.org/data/kupkb/>
+SELECT DISTINCT ?goid WHERE {
+?geneid <http://bio2rdf.org/ns/uniprot:xProtein> ?protein .
+?protein <http://purl.uniprot.org/core/classifiedWith> ?goid .
+?goid rdfs:subClassOf <http://purl.org/obo/owl/GO#GO_0008150>
+}
+
+^[get_orthologs]
+SELECT DISTINCT ?homolog WHERE {
+?geneid <http://www.kupkb.org/data/kupkb/hasHomolog> ?homolog
+}
+
+^[get_species]
+PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>
+PREFIX bio2rdf:<http://bio2rdf.org/ns/bio2rdf:>
+SELECT DISTINCT ?resource ?label  WHERE {
+?subject bio2rdf:xTaxonomy ?resource .
+?resource rdfs:label ?label
+}
+ORDER BY ?label
+
+^[get_expression]
+PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>
+PREFIX kupkb:<http://www.kupkb.org/data/kupkb/>
+SELECT DISTINCT ?resource ?label  WHERE {
+?listmember kupkb:hasExpression ?resource .
+?resource rdfs:label ?label
+}
+ORDER BY ?label
+
+^[get_locations]
+PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>
+PREFIX kupkb:<http://www.kupkb.org/data/kupkb/>
+SELECT DISTINCT ?resource ?label WHERE {
+?annotation kupkb:bioMaterial ?resource .
+?resource rdfs:label ?label
+}
+ORDER BY ?label
+
+^[get_conditions]
+PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>
+PREFIX kupkb:<http://www.kupkb.org/data/kupkb/>
+SELECT DISTINCT ?resource ?label WHERE {
+?annotation kupkb:hasDisease ?resource .
+?resource rdfs:label ?label
+}
+ORDER BY ?label
+
+^[get_processes]
+PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>
+PREFIX oboInOwl:<http://www.geneontology.org/formats/oboInOwl#>
+SELECT distinct ?resource ?label where {
+?resource rdfs:subClassOf <http://purl.org/obo/owl/GO#GO_0008150> .
+?resource oboInOwl:inSubset	<http://purl.org/obo/owl/obo#goslim_generic> .
+?resource rdfs:label ?label
+}
+ORDER BY ?label
+
+^[get_location_leucene_p1]
+PREFIX CL:<http://purl.org/obo/owl/CL#>
+PREFIX luc: <http://www.ontotext.com/owlim/lucene#>
+PREFIX OBO_REL: <http://purl.org/obo/owl/OBO_REL#>
+PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX kupkb:<http://www.kupkb.org/data/kupkb/>
+PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>
+PREFIX MA:<http://purl.org/obo/owl/MA#>
+PREFIX kupo:<http://www.kupkb.org/data/kupo/>
+PREFIX owl:<http://www.w3.org/2002/07/owl#>
+    
+SELECT DISTINCT ?s ?subject WHERE {
+?s luc:myIndex "
+
+
+^[get_location_leucene_p2]
+"    .
+?subject rdfs:label ?s .
+{
+{?subject rdfs:subClassOf kupo:KUPO_0000002}
+UNION
+{?subject rdfs:subClassOf kupo:KUPO_0000003}
+UNION
+{?subject rdfs:subClassOf MA:0002545}
+UNION
+{?subject rdfs:subClassOf MA:MA_0000325}
+UNION
+{  ?subject rdfs:subClassOf _:z .
+   _:z owl:onProperty OBO_REL:part_of .
+   _:z owl:someValuesFrom  MA:MA_0000325}
+}
+}
+ORDER BY ?subject
+
+^[get_term_and_parts_by_label]
+PREFIX owl:<http://www.w3.org/2002/07/owl#>
+PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>
+PREFIX OBO_REL: <http://purl.org/obo/owl/OBO_REL#>
+SELECT DISTINCT ?children ?label WHERE {
+{
+{?subject rdfs:label ?value .}
+UNION
+{?subject rdfs:label ?value_lang .}
+}
+?children rdfs:subClassOf ?subject .
+?children rdfs:label ?label .
+}
+ORDER BY ?label
+
+^[gene_exp_by_disease]
+PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>
+PREFIX kupkb:<http://www.kupkb.org/data/kupkb/>
+PREFIX PATO:<http://purl.org/obo/owl/PATO#>
+PREFIX core:<http://purl.uniprot.org/core/>
+PREFIX kupo:<http://www.kupkb.org/data/kupo/>
+PREFIX skos:<http://www.w3.org/2004/02/skos/core#>
+
+SELECT DISTINCT ?experimentId ?id ?geneSymbol ?analyteDiseaseURI ?analytedisease ?expressionLabel ?goterm
+WHERE {
+{
+  {?geneId rdf:type <http://bio2rdf.org/ns/geneid:Gene>}
+  UNION
+  {?geneId rdf:type kupkb:KUPKB_1000056}
+} .
+{
+  {?geneId <http://bio2rdf.org/ns/bio2rdf:symbol> ?geneSymbol}
+  UNION
+  {?geneId rdfs:label ?geneSymbol}
+}
+?geneId skos:notation ?id .
+{
+  {?listmember kupkb:hasDatabaseRef ?geneId}
+  UNION
+  { ?geneId <http://bio2rdf.org/ns/uniprot:xProtein> ?uniprot .
+    ?listmember kupkb:hasDatabaseRef ?uniprot
+  }
+}
+?geneId <http://bio2rdf.org/ns/uniprot:xProtein> ?protein .
+?protein <http://purl.uniprot.org/core/classifiedWith> ?goid .
+?goid rdfs:subClassOf <http://purl.org/obo/owl/GO#GO_0008150> .
+?goid rdfs:label ?goterm .
+
+?listmember kupkb:hasExpression ?expression .
+?expression rdfs:label ?expressionLabel .
+{
+{?listmember kupkb:hasExpression <http://www.kupkb.org/data/kupkb/KUPKB_1000091> } UNION
+{?listmember kupkb:hasExpression <http://www.kupkb.org/data/kupkb/KUPKB_1000089> } UNION
+{?listmember kupkb:hasExpression <http://www.kupkb.org/data/kupkb/KUPKB_1000066> } UNION
+{?listmember kupkb:hasExpression <http://www.kupkb.org/data/kupkb/KUPKB_1000065> } UNION
+{?listmember kupkb:hasExpression <http://www.kupkb.org/data/kupkb/KUPKB_1000063> }
+}
+
+?compoundList kupkb:hasMember ?listmember .
+?compoundList rdf:type ?experimentType .
+?experimentType rdfs:label ?experimentTypeLabel .
+filter (?experimentType = kupkb:KUPKB_1000029 || ?experimentType = kupkb:KUPKB_1000027 ||
+        ?experimentType = kupkb:KUPKB_1000073 || ?experimentType = kupkb:KUPKB_1000030 || ?experimentType = kupkb:KUPKB_1000028 || ?experimentType = kupkb:KUPKB_1000077) .
+?analysis kupkb:produces ?compoundList .
+?analysis kupkb:annotatedWith ?annotation .
+?analysis kupkb:analysisOf  ?experimentId  .
+?annotation kupkb:hasAnnotationRole kupo:KUPO_0300008 .
+OPTIONAL
+{
+{?annotation kupkb:hasDisease ?analyteDiseaseURI} .
+{?analyteDiseaseURI rdfs:label ?analytedisease} .
+}
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+    xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+
+     <ui:style>
+
+         .personDetails {
+
+            display:inline;
+
+         }
+
+    </ui:style>
+
+  <g:HTMLPanel>
+
+      <div class="generalText">
+
+
+      <p>The primary contact for the KUPKB is via the support [at] kupkb.org mailing list. Alternatively you can contact any of the group members from Manchester or Toulouse directly.</p>
+
+      <h2>Team KUPKB</h2>
+
+      <div style="border-style:dotted;margin:20px;padding:20px;width:600px;">
+          <img style="float:right;" src="images/people/julie.jpeg"></img>
+
+          <p style="padding-left:20px;margin-right:40px;">
+              <span style="font-weight:bold;font-size:larger;">Dr Julie Klein</span>
+          </p>
+          <p style="padding-left:20px;margin-right:40px;">
+              <span style="font-weight:bold;">Contact:</span> julie(dot)klein(at)inserm(dot)fr
+          </p>
+          <p style="padding-left:20px;margin-right:40px;">
+              <span style="font-weight:bold;">Role:</span> Queen of the KUPKB and first port of call for any questions relating to the KUPKB. She will gladly help you get your data into the KUPKB in return for tea and biscuits.
+          </p>
+          <p style="padding-left:20px;margin-right:40px;">
+              <span style="font-weight:bold;">Bio:</span> Julie Klein received her PhD in Life Sciences in 2009 from the University Paul Sabatier, Toulouse, France. This thesis aimed to unravel the role of the kinin B1 receptor in the development of kidney inflammation and fibrosis and evaluate the therapeutic potential of a B1R antagonist on the progression of nephropathies. Since 2009, Julie works as a post-doc on the development of a Kidney and Urinary Pathway Knowldge Base (KUPKB).
+          </p>
+      </div>
+
+      <div style="border-style:dotted;margin:20px;padding:20px;width:600px;">
+          <img style="float:right;" src="images/people/simon.jpg"></img>
+
+          <p style="padding-left:20px;margin-right:40px;">
+              <span style="font-weight:bold;font-size:larger;">Simon Jupp</span>
+          </p>
+          <p style="padding-left:20px;margin-right:40px;">
+              <span style="font-weight:bold;">Contact:</span> simon(dot)jupp(at)manchester(dot)ac(dot)uk
+          </p>
+          <p style="padding-left:20px;margin-right:40px;">
+              <span style="font-weight:bold;">Role:</span>Programmer, architect and ontologist for the KUPKB.
+          </p>
+          <p style="padding-left:20px;margin-right:40px;">
+              <span style="font-weight:bold;">Bio:</span> Simon works in the Bio-Health Informatics Group (BHIG) at the University of Manchester.
+              He has degrees in both Biochemistry and Computer Science and now works primarily as a research bioinformatician.
+              His interests are generally related to information management, but more specifically, using computers to improve the way we capture
+              , manage and share knowledge about biology. Most of my work is now focused on the use of ontologies to capture knowledge in some computationally useful form.
+          </p>
+      </div>
+
+      <div style="border-style:dotted;margin:20px;padding:20px;width:600px;">
+          <img style="float:right;" src="images/people/panos.png"></img>
+
+          <p style="padding-left:20px;margin-right:40px;">
+              <span style="font-weight:bold;font-size:larger;">Dr Panagiotis (Panos) Moulos</span>
+          </p>
+          <p style="padding-left:20px;margin-right:40px;">
+              <span style="font-weight:bold;">Contact:</span> pmoulos(at)eie(dot)gr
+          </p>
+          <p style="padding-left:20px;margin-right:40px;">
+              <span style="font-weight:bold;">Role:</span>New team member, trained in the dark arts of R and currently developing the next generation of KUPKB tools...
+          </p>
+          <p style="padding-left:20px;margin-right:40px;">
+              <span style="font-weight:bold;">Bio:</span> Panagiotis Moulos holds a diploma in Applied Mathematics and Physics and a MSc in Bioinformatics. In 2011, he received his PhD in Bioinformatics from the National Technical University of Athens, Greece (NTUA)  His research interests include statistical algorithms and software development for the computational analysis and meta-analysis of high-throughput genomic data (DNA microarrays, Next Generation Sequencing). He is also interested in the application of Machine Learning techniques regarding the computational analysis of high-throughput genomic data the integration of lower level data representations (fundamental analysis of high-throughput genomic data) to higher level representations (over represented GO categories, mapping to metabolic pathways, building of transcriptional networks). He currently works as a post-doc in the RF-Lab at Inserm, U1048, Toulouse, France.
+          </p>
+      </div>
+
+
+      <div style="border-style:dotted;margin:20px;padding:20px;width:600px;">
+          <img style="float:right;" src="images/people/Joost.jpg"></img>
+
+          <p style="padding-left:20px;margin-right:40px;">
+              <span style="font-weight:bold;font-size:larger;">Dr Joost Schanstra</span>
+          </p>
+          <p style="padding-left:20px;margin-right:40px;">
+              <span style="font-weight:bold;">Contact:</span> joost-peter(dot)schanstra(at)inserm(dot)fr
+          </p>
+          <p style="padding-left:20px;margin-right:40px;">
+              <span style="font-weight:bold;">Role:</span> Crash test dummy for the KUPKB. Plays a mean slap bass guitar.
+          </p>
+          <p style="padding-left:20px;margin-right:40px;">
+              <span style="font-weight:bold;">Bio:</span> Dr Joost Schanstra, born 1967 in Meppel, The Netherlands, received his PhD in Life Sciences (1996) from the University of Groningen, The Netherlands. From 1996 to 1999 he worked as a post-doctoral researcher at Inserm U388 in Toulouse,
+              France. In 1999 he obtained a staff research position in the same laboratory. Since 2004 he is group-leader of the RF-lab with
+              Jean-Loup Bascands at Inserm U1048, Toulouse, France.
+          </p>
+      </div>
+
+      <div style="border-style:dotted;margin:20px;padding:20px;width:600px;">
+          <img style="float:right;" src="images/people/robertstevens.jpg"></img>
+
+          <p style="padding-left:20px;margin-right:40px;">
+              <span style="font-weight:bold;font-size:larger;">Prof. Robert Stevens</span>
+          </p>
+          <p style="padding-left:20px;margin-right:40px;">
+              <span style="font-weight:bold;">Contact:</span> robert(dot)stevens(at)manchester(dot)ac(dot)uk
+          </p>
+          <p style="padding-left:20px;margin-right:40px;">
+              <span style="font-weight:bold;">Role:</span> High flying academic and ontology guru. Ability to speak at length and with utter authority about any subject.
+          </p>
+          <p style="padding-left:20px;margin-right:40px;">
+              <span style="font-weight:bold;">Bio:</span> Dr Robert Stevens is a reader in BioHealth Informatics in the Bio and Health Informatics Group
+              at the University of Manchester. His main areas of research interest within these domains are the development and use of ontologies to
+              describe biology to make knowledge about molecular biology computationally useful. He is particularly interested in the communal building of
+              ontologies -- enabling domain experts to use the power of formal, expressive languages, such as the Web Ontology Language (OWL). This
+              interest extends back from this formal part of the process of ontology building back to the initial stages of the process where he has an
+              interest in rapid development of vocabularies and ontologies from text. He also has an interest in e-Science with the use of the taverna
+              workbench from the myGrid project to industrialise the bioinformatics analysis of data. Ontologies and semantic description of content
+              through ontologies also plays a part in this e-Science research.
+          </p>
+      </div>
+
+      </div>
+
+  </g:HTMLPanel>
+
+</ui:UiBinder>

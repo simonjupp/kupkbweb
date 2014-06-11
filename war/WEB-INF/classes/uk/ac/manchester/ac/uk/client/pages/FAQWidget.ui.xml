@@ -1,0 +1,61 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+    xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+
+  <g:HTMLPanel>
+
+
+      <div class="generalText">
+
+
+<p>The Kidney and Urinary Pathway Knowledge Base is designed for researchers, physicians and students of these professions in the field.</p>
+<ul>
+<li>Content is not asserted complete or error free.</li>
+<li>As with any textbook, coverage can never be complete. Information may also become out of date. We encourage suggestions for additional content or notification of possible errors.</li>
+<li>We do not enter into correspondence on any individual's case history or clinical condition and we do not offer personalised medical advice on any KUP related disease.</li>
+
+</ul>
+
+<p>Answers to frequently asked questions about database content, editorial policy, funding etc are found here.</p>
+
+
+<h4>I want to add my data or data that I found in the literature to the KUPKB. What should I do?</h4>
+<p>See the “Submit data” section. If you need more information or help please send a mail to support [at] kupkb.org.</p>
+
+<h4>I want to report a bug. What should I do?</h4>
+<p>Please send a mail to support [at] kupkb.org, and we will try to answer as soon as possible.</p>
+
+<h4>I want to cite the KUPKB since I used it in my research. Is there any publication related to the KUPKB?</h4>
+<p>We are currently preparing a manuscript for the kupkb application. In the meantime you can cite the following paper which describes the ontology development and the Semantic Web technologies used to build the KUPKB:
+<br/>
+Simon Jupp, Julie Klein, Joost Schanstra and Robert Stevens. <a href="http://www.jbiomedsem.com/content/2/S2/S7">Developing a kidney and urinary pathway knowledge base</a>. Journal of Biomedical Semantics 2011, 2(Suppl 2):S7.</p>
+
+
+<h4>Is the KUPKB manually curated?</h4>
+<p>All the data contained in the KUPKB have been manually extracted from figures and supplementary data. However, no further “subjective” selection of the data has been performed by the KUPKB team before integration. We decided to let the user judge on relevancy of the data based on their own criteria, which may strongly differ from one to another, especially by: 1) giving some details about the analysis (extracted from the abstract or the material and method section), 2) giving the link to the full publication and 3) giving, when possible, the p-values and FDR values.</p>
+
+<h4>How are the data analysed?</h4>
+<p>In most cases, data are extracted from figures and supplementary data. In this case, the data have been integrated exactly as they were published, without further analysis. Details on the analysis done by the authors analysis can be found in the original publication as we link each experiment to its respective Pubmed id (PMID).
+However, when available, some of the raw datasets have been downloaded from GEO. In this case, the data has been analysed by the KUPKB team one of the following two approaches (specified in the experiment description):</p>
+
+      <ol>
+      <li>Data were analyzed using R and Bioconductor as follows: raw Affymetrix CEL files were downloaded from GEO and subjected to GCRMA background adjustment to eliminate non-specific and cross hybridization effects, followed by quantile normalization and median polish summarization to extract transcript expression values. Each transcript was then categorized as present (P) if its MAS5 call was “Present” in at least 50% of the experimental samples or absent (A) otherwise. All transcripts were averaged across each experimental class and in addition, those characterized as present were further categorized for each experimental class as “Weak”, “Medium” or “Strong” if their log2 expression value fell below the 1st, between the 2nd and 3rd or above the 3rd quartiles of the averaged transcript distribution respectively.</li>
+
+      <li>Data were analyzed using GeneArmada as follows: raw Affymetrix CEL files were downloaded from GEO and subjected to GCRMA background adjustment to eliminate non-specific and cross hybridization effects, followed by quantile normalization and median polish summarization to extract transcript expression values. Statistical selection of differentially genes was based on a p-value&lt;0,05 and a FDR Benjamini-Hochberg q&lt;0,05.</li>
+    </ol>
+
+      <h4>Why can’t I find data in the KUPKB that are present in a publication?</h4>
+<p>The content of the KUPKB is not asserted complete or error free. We strongly encourage users to submit data to the KUPKB team so they can be integrated in newer versions.</p>
+
+<!--<p>We plan to update the content of the KUPKB every SIMON?.</p>-->
+<!--<p>In the case where the publication is listed in the experiment list but the data are not fully reported, this can be explained by the fact that some data are not reported in the publication in a form that can be extracted. For example, if the data in is .pdf or .jpeg, there could be some major issues in extracting them in a tabular form. In some cases, the extraction has been done by hand, but when it comes to 1000 genes or proteins, this is becoming a hell of a job. If you are the author(s) of such a paper and you have these results in a tabular form and you want to integrate them in the KUPKB please consult the [Submit Data tab] in the KUPKB browser. There is also a major lack of homogenization in the use of identifiers for the data. Some publications use non-standard or out-of-date identifiers to annotate the data. In this case again, if it concerned only a few genes or proteins, the mapping to EntrezGene ids or Uniprot ids has been done manually or using Madgene (an excellent Id convertor that helped us a lot!). However, in cases where large amounts of genes or proteins needed to be identified, it was not feasible to do it by hand.</p>-->
+
+</div>
+
+
+
+
+  </g:HTMLPanel>
+
+</ui:UiBinder>

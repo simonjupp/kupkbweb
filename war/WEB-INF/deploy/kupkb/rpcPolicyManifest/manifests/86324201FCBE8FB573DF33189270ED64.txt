@@ -1,0 +1,2 @@
+serviceClass: uk.ac.manchester.ac.uk.client.KUPKBOWLQuery
+path: E60BCEE3149AE3BC2A6B06B272540288.gwt.rpc

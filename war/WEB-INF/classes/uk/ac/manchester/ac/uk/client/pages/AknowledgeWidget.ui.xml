@@ -1,0 +1,26 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+    xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+
+  <g:HTMLPanel>
+
+      <div class="generalText">
+
+      <h2>Thank you!</h2>
+
+      <p>We would like to thank a number of individuals from the EuroKUP community for contributing to the KUP-ontology. EuroKUP (European Kidney and Urinary Proteomics), yes KUP stands for something somewhat different in the KUPKB, is an FP7 COST-initiative focusing on facilitating translational proteomic research in kidney diseases by bringing together and promoting interactions between basic scientists and clinicians working in the broader areas of kidney and urine proteomics.
+First of all we would like to thank all EuroKUP members that contributed to the KUP-ontology day that was held on November 2, 2009 in Manchester. We would like to thank the following EuroKUP members more specifically for their continued help on the ontology: Antonia Vlahou, Jorgen Frokaier, Aristidis Charonis, Alberto Ortiz and Harry Holthofer.</p>
+
+      <img style="width:220;height:200px;" src="images/eurokup.png"></img>
+      <img src="images/cost.png"></img>
+
+      <p>We would also acknowledge the help of the entire RF-lab for their continuous support and their constructive comments. Sorry for our repeated harassments. Thank you in advance for being our first testers.</p>
+
+      <img  style="width:270;height:140px;" src="images/logorflab.jpg"></img>
+
+      </div>
+
+  </g:HTMLPanel>
+
+</ui:UiBinder>

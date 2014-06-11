@@ -1,0 +1,69 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+
+    <g:HTMLPanel>
+
+        <div class="generalText">
+
+            <h4>What is the KUPKB?</h4>
+
+            <p>The Kidney and Urinary Pathway Knowledge Base (KUPKB) is a prototype application that uses state-of-the-art
+                Semantic Web technologies to integrate data and knowledge relating to the Kidney and Urinary Pathways (KUP).
+                The KUPKB is being developed as part of the EU funded <a href="http://www.e-lico.eu/" target="_blank">e-LICO project</a>, which seeks
+                to develop a platform for
+                data mining and data-intensive sciences. The KUPKB aims to assist biomarker discovery and molecular pathway
+                modelling for diseases affecting the kidney and urinary pathways. The KUPKB is developed and maintained by
+                the University of Manchester (UK) and Inserm Toulouse (France).</p>
+
+            <h4>Experimental data in the KUPKB</h4>
+
+            <p>The KUPKB contains experimental data (mRNA, proteins and miRNA) coming from published articles in Pubmed,
+                all related to kidney physiology and pathology. The data have been extracted manually from the figures or from
+                the supplementary data when possible. Some microarray raw datasets have also been downloaded from the
+                Gene Expression Omnibus and analysed by the open-source software GeneArmada.</p>
+
+            <h4>Creating links between genes, proteins and pathways</h4>
+
+            <p>The KUPKB has integrated external resources such as NCBI gene, UniProt, Homologene and KEGG. This additional knowledge
+                layer provides unique opportunity to link genes and proteins when searching for a given gene symbol, but also to link
+                the orthologs from different species. Moreover, proteins are linked to KEGG pathways when possible, making the KUPKB
+                able to be queried for specific biological pathways.</p>
+
+            <h4>Using ontologies to annotate and query the data</h4>
+            <p>The KUPKB uses bio-medical ontologies to provide a common vocabulary for describing kidney anatomy, cells or diseases.
+                Ontologies capture the relationships between terms and express these relationships in a language that can be interpreted
+                by a computer. We have developed a specialised KUP Ontology to annotate the experiments, which allows us to perform
+                flexible queries and inference over the data (See a short article by Dr Robert Stevens on ontology in Biology <a href="http://www.cs.man.ac.uk/~stevensr/menupages/background.php" target="_blank">here</a>).
+                Moreover, the KUPKB has integrated the GO Annotations for Uniprot that allows to annotate and query genes and proteins
+                given their related Molecular Process, Biological Function and Cellular Component location.</p>
+
+            <h4>Semantic Web?</h4>
+
+            <p>The KUPKB is built using Semantic Web technologies. The Semantic Web is an evolution of the current web that attempts to standardise the way
+                data is published and shared on the web. The vision for the Semantic Web is in principle very simple; if we standardise the way we publish data and describe the
+                data, then it becomes  easier to integrate these data and provides scope for more complex querying and analysis of the data. In the life sciences in particular, we
+                have lots of data around, but integrating it is difficult because the raw data is either simply not available on the web or it comes in some bespoke format that needs
+                translating into some other format before integration is possible. The problem isn't just formats, we also have problems with identifiers and names for the things we talk about in biology, such as genes, gene functions,
+                diseases, anatomical parts, biomedical investigations, instruments etc.. Luckily there is a whole community of biologists and computer scientist working to develop ontologies that will provide
+                the community with a set of standard terminology to describe the data published on the web - many of you will already be familiar with the Gene Ontology, but other ontologies now exist to cover many sub-domains of biology.
+                The KUPKB makes extensive use of these ontologies to provide a controlled and consistent annotation mechanism for the experimental data. Adopting these standards not only offers
+                new ways to query and browse the data but it also makes it easier to integrate other datasets with the KUPKB data, providing everybody adheres to the same set of standards.
+            </p>
+
+            <p>Whilst the KUPKB is not the first and probably not the last specialised kidney database that will emerge on the Web, it differs from previous efforts because of the way we represent and publish the data.
+               All of the data is published in a single format called RDF. We have RDF versions of many biological databases in the KUPKB
+            such as Entrez Gene, Uniprot, KEGG, HMDB, Homologene, String, Gene Ontology Annotations and HMDB. Various mapping work has been done to connected all of these databases using standard identifiers. Next, the experimental observations
+            such as a gene list from a microarray experiment are also represented in RDF, and using the appropriate identifiers, linked to the appropriate reference databases. The experimental data is described using terms from
+            standard ontologies that cover terms about renal cells, anatomy, animal models and diseases. This gives us a very rich connected knowledge base of facts about experimental observation in the kidney. The iKUP browser
+            only exposes a small amount of the rich data currently held in the KUPKB and we are currently working on more tools for this site that expose the rich data in the KUPKB. The most powerful and flexible way to query
+            this data is to query the RDF database directly, we can do this using an RDF query language called SPARQL. You can perfom sparql queries against the KUPKB using the query box in the SPARQL tab above; SPARQL is a low level query language and
+            is going to be to everyones taste, however, we have provided some example queries to illustrate what is possible. Remember, if you submit your own data to the KUPKB then it will instantly become integrated with all the other
+            datasets already present. For help with SPARQL or any question please contact us via at  support [at] kupkb.org.</p>
+
+        </div>
+
+    </g:HTMLPanel>
+
+</ui:UiBinder>

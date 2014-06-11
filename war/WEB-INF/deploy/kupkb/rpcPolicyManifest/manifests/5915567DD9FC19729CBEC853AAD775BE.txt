@@ -1,0 +1,2 @@
+serviceClass: uk.ac.manchester.ac.uk.client.KUPKBQueryService
+path: 2DFBCA4B49417156343326B5F3A50E2A.gwt.rpc

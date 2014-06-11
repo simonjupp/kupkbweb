@@ -1,0 +1,5 @@
+# Module kupkb
+# RPC service class, partial path of RPC policy file
+com.allen_sauer.gwt.log.client.RemoteLoggerService, 0E2AE422F0EED097737052A53F3D79E2.gwt.rpc
+uk.ac.manchester.ac.uk.client.KUPKBQueryService, 2DFBCA4B49417156343326B5F3A50E2A.gwt.rpc
+uk.ac.manchester.ac.uk.client.KUPKBOWLQuery, E60BCEE3149AE3BC2A6B06B272540288.gwt.rpc

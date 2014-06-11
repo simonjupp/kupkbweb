@@ -5,3 +5,4 @@ target/
 .war
 war
 out
+.svn
