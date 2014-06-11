@@ -1,0 +1,30 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+    xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+
+  <g:HTMLPanel>
+
+      <div class="generalText">
+      <h4>Want to submit your data to the KUPKB?</h4>
+      <p> Then we are more than happy to assist you in doing so!! We have developed
+      a simple spreadsheet template for users to submit data to the KUPKB. We aim to capture
+      a minimal amount of information about the experiment and the observations
+      made. Where possible we use a controlled vocabulary with terms from the KUP ontology
+          that enables advanced querying capabilities in the iKUP browser.</p>
+
+          <p>
+              The template is distributed as an Microsft Excel spreadsheet and can be edited
+              in either MS Excel or the open source tool OpenOffice. You can download a copy of the
+              template from <a href="etc/kupkb_experiment_template_v3.xls" _target="blank">here</a>. There are some instructions in the spreadsheet
+              but you can also view an example from one of the KUPKB exepriements <a href="etc/GSE12792.xls" _target="blank">here</a>. If you have any questions or
+              would like assistanc in submitting your data please contact us via e-mail at support [at] kupkb.org.
+          </p>
+
+          <img align="centre" border="1" style="width:700px;height:400px;" src="images/populous_template.png"></img>
+
+
+      </div>
+  </g:HTMLPanel>
+
+</ui:UiBinder>

@@ -1,0 +1,32 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+
+    <g:HTMLPanel>
+
+        <div class="homeText">
+
+            <table><tr><td style="width: 90%">
+                <div style="padding-top:10px;">
+
+                     <p class="ikupHomeText">The KUPKB is a collection of omics datasets that have been extracted from scientific publications
+                       and other related renal databases. The iKUP browser provides a single point of entry for you to query and browse these datasets.</p>
+
+
+                </div></td>
+                <!-- Twitter link -->
+                <td style="width: 10%; vertical-align: top;"><div>
+                <span style="margin-left: 10px; font-size: 1.3em; font-weight: bold;">KUPKB News</span>
+
+                    <a class="twitter-timeline" href="https://twitter.com/KUPKB_team" data-widget-id="348003163430854656">Tweets by @KUPKB_team</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+                </div>
+                </td></tr></table>
+
+        </div>
+
+    </g:HTMLPanel>
+
+</ui:UiBinder>

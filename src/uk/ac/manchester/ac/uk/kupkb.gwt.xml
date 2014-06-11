@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='kupkb'>
+    <!-- Inherit the core Web Toolkit stuff.
+    -->
+    <inherits name='com.google.gwt.user.User'/>
+    <inherits name="com.google.gwt.resources.Resources" />
+
+    <inherits name='org.cobogw.gwt.user.User' />
+    <!-- Inherit the default GWT style sheet.  You can change       -->
+    <!-- the theme of your GWT application by uncommenting          -->
+    <!-- any one of the following lines.                            -->
+    <!--<inherits name='com.google.gwt.user.theme.standard.Standard'/>-->
+    <inherits name='com.google.gwt.user.theme.chrome.Chrome'/>
+    <!--<inherits name='com.google.gwt.user.theme.dark.Dark'/>-->
+    <!---->
+    <!-- Other module inherits                                      -->
+
+    <!-- For development, a default of `DEBUG` is recommended -->
+    <inherits name="com.allen_sauer.gwt.log.gwt-log-TRACE" />
+    <inherits name="com.allen_sauer.gwt.log.gwt-log-RemoteLogger" />
+    <set-property name="log_DivLogger" value="DISABLED" />
+    <set-configuration-property name="log_pattern" value="%X (%F:%L) %d [%-5p] %m%n" />
+
+     <!--<set-configuration-property name="log_url" value="../gwt-log" />-->
+    <set-configuration-property name="log_url" value="kupkb/gwt-log" />
+
+    <!-- Specify the app entry point class.                         -->
+    <entry-point class='uk.ac.manchester.ac.uk.client.KUPKBEntryPoint'/>
+
+    <!-- Specify the paths for translatable code                    -->
+    <source path='client'/>
+    <source path='shared'/>
+
+</module>
