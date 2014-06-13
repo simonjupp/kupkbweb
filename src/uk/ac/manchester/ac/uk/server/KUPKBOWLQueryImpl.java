@@ -89,7 +89,9 @@ public class KUPKBOWLQueryImpl extends RemoteServiceServlet implements KUPKBOWLQ
 //            manager.loadOntology(IRI.create("file:/Users/bhig/dev/kupDB_scripts/elicosvn/Public/kupo/imports/go_bp.owl"));
 //            OWLOntology go_slim = manager.loadOntology(IRI.create("file:/Users/bhig/dev/kupDB_scripts/elicosvn/Public/kupo/imports/goslim_goa.owl"));
 
-            manager.loadOntologyFromOntologyDocument(KUPKBOWLQueryImpl.class.getClassLoader().getResourceAsStream("resources/ontologies/mao.owl"));
+//            manager.loadOntologyFromOntologyDocument(KUPKBOWLQueryImpl.class.getClassLoader().getResourceAsStream("resources/ontologies/mao.owl"));
+            manager.loadOntologyFromOntologyDocument(KUPKBOWLQueryImpl.class.getClassLoader().getResourceAsStream("resources/ontologies/uberon.owl"));
+            manager.loadOntologyFromOntologyDocument(KUPKBOWLQueryImpl.class.getClassLoader().getResourceAsStream("resources/ontologies/doid.owl"));
             manager.loadOntologyFromOntologyDocument(KUPKBOWLQueryImpl.class.getClassLoader().getResourceAsStream("resources/ontologies/cto.owl"));
             manager.loadOntologyFromOntologyDocument(KUPKBOWLQueryImpl.class.getClassLoader().getResourceAsStream("resources/ontologies/go_bp.owl"));
             OWLOntology go_slim = manager.loadOntologyFromOntologyDocument(KUPKBOWLQueryImpl.class.getClassLoader().getResourceAsStream("resources/ontologies/goslim_goa.owl"));
@@ -106,16 +108,20 @@ public class KUPKBOWLQueryImpl extends RemoteServiceServlet implements KUPKBOWLQ
 
 //
 
-            OWLImportsDeclaration impdec1 = factory.getOWLImportsDeclaration(IRI.create("http://purl.org/obo/owl/adult_mouse_anatomy"));
+//            OWLImportsDeclaration impdec1 = factory.getOWLImportsDeclaration(IRI.create("http://purl.org/obo/owl/adult_mouse_anatomy"));
             OWLImportsDeclaration impdec2 = factory.getOWLImportsDeclaration(IRI.create("http://purl.org/obo/owl/cell"));
             OWLImportsDeclaration impdec3 = factory.getOWLImportsDeclaration(IRI.create("http://purl.org/obo/owl/biological_process"));
             OWLImportsDeclaration impdec4 = factory.getOWLImportsDeclaration(IRI.create("http://www.kupkb.org/public/kupo/kupo-emap.owl"));
+            OWLImportsDeclaration impdec5 = factory.getOWLImportsDeclaration(IRI.create("http://purl.obolibrary.org/obo/uberon.owl"));
+            OWLImportsDeclaration impdec6 = factory.getOWLImportsDeclaration(IRI.create("http://purl.obolibrary.org/obo/doid.owl"));
 
 
-            manager.applyChange(new AddImport(kupo, impdec1));
+//            manager.applyChange(new AddImport(kupo, impdec1));
             manager.applyChange(new AddImport(kupo, impdec2));
             manager.applyChange(new AddImport(kupo, impdec3));
             manager.applyChange(new AddImport(kupo, impdec4));
+            manager.applyChange(new AddImport(kupo, impdec5));
+            manager.applyChange(new AddImport(kupo, impdec6));
 
 
 

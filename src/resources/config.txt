@@ -1,2 +1,2 @@
-repository-path:http://130.88.97.195:8080/openrdf-sesame
-repository-id:kupkb-010913
+repository-path:http://130.88.97.195:8081/openrdf-sesame
+repository-id:cvdkb-130614

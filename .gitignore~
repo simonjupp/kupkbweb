@@ -2,7 +2,9 @@ target/
 *.iml
 *.DS_store
 .idea
-.war
-war
+kupkb.war
 out
 .svn
+gwt-unitCache
+war/WEB-INF/classes
+war/WEB-INF/deploy/

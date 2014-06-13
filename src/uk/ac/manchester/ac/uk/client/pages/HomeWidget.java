@@ -44,8 +44,8 @@ public class HomeWidget extends Composite {
 
         VerticalPanel mainPanel = new VerticalPanel();
         mainPanel.add(
-                new HTML("<p class=\"ikupHomeText\">The KUPKB is a collection of omics datasets that have been extracted from scientific publications " +
-                        " and other related renal databases. The iKUP browser provides a single point of entry for you to query and browse these datasets.</p>"));
+                new HTML("<p class=\"ikupHomeText\">The CVDKB is a collection of omics datasets that have been extracted from scientific publications and other related databases. The browser provides a single point of entry for you to query and browse these datasets. " +
+                        "</p>"));
 
 //        mainPanel.add(
 //                new HTML("<p style=\"width: 50%; margin-left:10px; padding-left:5px; font-weight:bold; font-size:1.1em; background-color:#FFFBD0; border-style:solid; border-width:1px; border-color:#878787; border-radius:5px; -webkit-border-radius:5px; -moz-border-radius: 5px;\">The <span style=\"color:#E21A30\">KUP</span><span style=\"color:#000000\">KB </span><span style=\"color:#E21A30;\">Net</span><span style=\"color:#000000\">work </span><span style=\"color:#E21A30\">Vis</span><span style=\"color:#000000\">ualizer</span> beta version is now online! You can try it <a href=\"http://www.kupkb.org/vis/index.php\" target=\"_blank\">here!</a></p>"));
@@ -59,13 +59,13 @@ public class HomeWidget extends Composite {
         searchTabPanel.removeStyleName("gwt-TabPanelBottom");
 
         searchTabPanel.add(moleculeSearchWidget, "Molecule Search");
-        searchTabPanel.add(new SPARQLWidget(), "Advanced Search");
+//        searchTabPanel.add(new SPARQLWidget(), "Advanced Search");
         Frame vizFrame = new Frame("http://www.kupkb.org/vis/index.php?remove_template=1");
 
         vizFrame.setSize("1700","1150");
         VerticalPanel vizPanel = new VerticalPanel();
         vizPanel.add(vizFrame);
-        searchTabPanel.add(vizPanel, "KUPKB Network Visualizer");
+//        searchTabPanel.add(vizPanel, "KUPKB Network Visualizer");
 
         searchPanel.add(searchTabPanel);
 

@@ -5,3 +5,7 @@ target/
 kupkb.war
 out
 .svn
+gwt-unitCache
+war/WEB-INF/classes
+war/WEB-INF/deploy/
+war/kupkb/*.cache.html

@@ -132,7 +132,7 @@
   <target name="build" depends="gwtc" description="Build this project" />
 
   <target name="war" depends="build" description="Create a war file">
-    <zip destfile="/Users/jupp/dev/tomcats/apache-tomcat-6.0.29/webapps/kupkb.war" basedir="war"/>
+    <zip destfile="/Users/jupp/dev/tomcats/apache-tomcat-6.0.29/webapps/cvdkb.war" basedir="war"/>
   </target>
 
   <target name="clean" description="Cleans this project">

@@ -188,14 +188,14 @@ public class MoleculeSearchWidget extends Composite {
         removeFilterButton.setStyleName("filterButton");
         addFilterButton.setEnabled(true);
         removeFilterButton.setEnabled(false);
-        browserPanel.add(filterPanel);
+//        browserPanel.add(filterPanel);
 
 
         FlowPanel treePanel = new FlowPanel();
         treePanel.add(tree);
         treePanel.setStyleName("treePanel");
 
-        bottomResultsPanel.add(treePanel);
+//        bottomResultsPanel.add(treePanel);
 
         SimplePager pager = new SimplePager(SimplePager.TextLocation.RIGHT);
         pager.setPageSize(50);
@@ -236,7 +236,7 @@ public class MoleculeSearchWidget extends Composite {
 
 
 
-        pagerAndResultsTabelPanel.add(submitToVizForm);
+//        pagerAndResultsTabelPanel.add(submitToVizForm);
         pagerAndResultsTabelPanel.add(pager);
         pagerAndResultsTabelPanel.add(resultsTable);
         bottomResultsPanel.add(pagerAndResultsTabelPanel);
@@ -544,8 +544,8 @@ public class MoleculeSearchWidget extends Composite {
 
         }
 
-        model.regenerateTree(iriSet);
-        model.refreshRoot();
+//        model.regenerateTree(iriSet);
+//        model.refreshRoot();
 
         loadingImage.setVisible(false);
 

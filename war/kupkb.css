@@ -6,10 +6,10 @@
     font-family: Arial Unicode MS, Arial, sans-serif;
     font-size: small;
     line-height: 1.7em;
-    background: url(images/up-left-corner.png) no-repeat top left,
-    url(images/bottom-left-corner.png) no-repeat bottom left,
-    url(images/up-right-corner.png) no-repeat top right;
-    background: url(images/up-left-corner.png)\0/;
+    /*background: url(images/up-left-corner.png) no-repeat top left,*/
+    /*url(images/bottom-left-corner.png) no-repeat bottom left,*/
+    /*url(images/up-right-corner.png) no-repeat top right;*/
+    /*background: url(images/up-left-corner.png)\0/;*/
 
 }
 

@@ -108,11 +108,11 @@ public class KUPKBEntryPoint implements EntryPoint {
         mainTabPanel.removeStyleName("gwt-TabPanelBottom");
 
         mainTabPanel.add(new HomeWidget(), "Home");
-        mainTabPanel.add(new AboutWidget(), "About");
-        mainTabPanel.add(new SubmitWidget(), "Submit Data");
-        mainTabPanel.add(new ContactWidget(), "Contact");
-        mainTabPanel.add(new AknowledgeWidget(), "Acknowledgements");
-        mainTabPanel.add(new FAQWidget(), "FAQ");
+//        mainTabPanel.add(new AboutWidget(), "About");
+//        mainTabPanel.add(new SubmitWidget(), "Submit Data");
+//        mainTabPanel.add(new ContactWidget(), "Contact");
+//        mainTabPanel.add(new AknowledgeWidget(), "Acknowledgements");
+//        mainTabPanel.add(new FAQWidget(), "FAQ");
 
 
         mainTabPanel.addSelectionHandler(new SelectionHandler<Integer> () {
